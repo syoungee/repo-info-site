@@ -1,4 +1,4 @@
-const Main = () => {
-  return <div>Main Page</div>;
+const Repos = () => {
+  return <div>Repos Page</div>;
 };
-export default Main;
+export default Repos;
