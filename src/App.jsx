@@ -1,9 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Main from './components/Main';
 import Issues from './components/Issues';
-import Repos from './components/Repos';
-import NotFound from './components/NotFound';
+import Repos from './pages/Repos';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -11,7 +10,6 @@ function App() {
       <Routes>
         <Route>
           <Route path="/repos" element={<Repos />} />
-          {/* <Route path="/repos" element={<Repos />} /> */}
           <Route path="/issues" element={<Issues />} />
         </Route>
         <Route path="*" element={<NotFound />} />

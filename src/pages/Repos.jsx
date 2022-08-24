@@ -1,7 +1,7 @@
 import { Navigate } from 'react-router-dom';
 import { useState } from 'react';
-import Elevation from './Elevation';
-import FullWidthTextField from './InputText';
+import Elevation from '../components/Elevation';
+import FullWidthTextField from '../components/InputText';
 
 const Repos = () => {
   const [searchText, setSearchText] = useState();
