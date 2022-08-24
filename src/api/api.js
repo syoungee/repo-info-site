@@ -1,6 +1,6 @@
-const fetchRepos = async (q = 'melon', sort = 'best match', order = 'desc', page = 1) => {
+const fetchRepos = async (q = '', sort = 'best match', order = 'desc', page = 1, per_page) => {
   return fetch(
-    `https://api.github.com/search/repositories?q=${q}&sort=${sort}&order=${order}&page=${page}`,
+    `https://api.github.com/search/repositories?q=${q}&sort=${sort}&order=${order}&page=${page}&per_page=${per_page}`,
     // `https://api.github.com/search/repositories?q=${q}+language:${encodeURIComponent(language.toLowerCase())}&sort=${sort}&order=${order}&page=${page}`,
     {
       headers: {
@@ -44,4 +44,4 @@ const getIssues = async (owner, repo, state, per_page) => {
     });
 };
 
-export default fetchRepos;
+export default { fetchRepos, getIssues };
