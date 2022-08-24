@@ -10,3 +10,13 @@ https://api.github.com/repos/expressjs/body-parser/issues?state=open&per_page=3
 ### 
 
 https://api.github.com/search/repositories?q=typescript&page=1&per_page=5
+
+
+###
+
+https://api.github.com/repos/typescript-eslint/typescript-eslint/i
+
+
+###
+
+https://api.github.com/repos/microsoft/TypeScript/issues?state=open&page=1&per_page=20 

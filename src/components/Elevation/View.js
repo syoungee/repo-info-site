@@ -1,13 +1,10 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
-import { searchRepos } from '../api/api';
-// import { useLocation } from 'react-router-dom';
-// import { repo_data } from '../dummy-data';
 import Skeleton from '@mui/material/Skeleton';
+// import { repo_data } from '../dummy-data';
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -18,53 +15,10 @@ const Item = styled(Paper)(({ theme }) => ({
   overflow: 'auto',
 }));
 
-// dark mode
-// const darkTheme = createTheme({ palette: { mode: 'dark' } });
 const lightTheme = createTheme({ palette: { mode: 'light' } });
 
-export default function Elevation(props) {
-  const { searchText } = props;
-  const [repolist, setRepolist] = useState();
-  //const location = useLocation();
-  const skeletons = Array.from({ length: 10 }, (v, i) => i);
-
-  const repos = () => {
-    searchRepos(searchText).then((res) => {
-      const data = res.data.items;
-      setRepolist(data);
-      return res.data.items;
-    });
-  };
-
-  useEffect(() => {
-    repos();
-  }, [searchText]);
-
-  const addRepo = (item) => {
-    // add 클릭 시 repo name, repo owner 정보를 저장한다.
-    saveRepo(item?.full_name);
-  };
-
-  const saveRepo = (repo_name) => {
-    let repoList = localStorage.getItem('repoList');
-    let repoArr = [];
-    if (!repoList) {
-      repoArr.push(repo_name);
-      localStorage.setItem('repoList', JSON.stringify(repoArr));
-      alert('레포가 추가되었습니다.');
-    } else {
-      repoArr = JSON.parse(repoList);
-      if (repoArr.length >= 4) {
-        repoArr.push(repo_name);
-        localStorage.setItem('repoList', JSON.stringify(repoArr.splice(1)));
-        alert('레포 즐겨찾기 목록이 꽉 찼습니다. 맨 처음 레포를 빼고 레포를 추가합니다.');
-      } else {
-        repoArr.push(repo_name);
-        localStorage.setItem('repoList', JSON.stringify(repoArr));
-        alert('레포가 추가되었습니다.');
-      }
-    }
-  };
+export default function Views(props) {
+  const { addRepo, repolist, skeletons } = props;
 
   return (
     <Grid container spacing={2} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
