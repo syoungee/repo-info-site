@@ -16,6 +16,11 @@ npm start
 
 **GitHub API : [https://docs.github.com/en/rest](https://docs.github.com/en/rest)**
 
+
+# 과제 시연
+https://user-images.githubusercontent.com/22606199/186543003-cd2e6ab4-ef96-4ec8-8a2f-24bead9f6dbe.mp4
+
+
 # 권장 사용 언어 및 라이브러리
 
 1. 웹은 **React.js** 앱은 React-Native를 사용하여 개발하는 것을 권장합니다.
@@ -39,3 +44,22 @@ npm start
 
 - GitHub API는 **REST API** 혹은 GraphQL API 어떤 것을 써도 무방합니다.
 - 별도의 요구사항이 없는 것은 지원자가 판단해서 개발합니다.
+
+# 보완할 점
+```
+i. pagnation부분에서 데이터를 가져오는 부분에 대한 로직 변경이 필요합니다.
+ii. refactoring이 부족합니다.
+iii. 사용자를 고려한 UI 구현이 필요합니다.
+```
+
+# 후기
+```
+MUI에서 UI style을 가져와서 사용했는데 처음 해보는 거라서 시간이 다소 오래걸렸다.
+skeleton을 적용하니 훨씬 더 보기 좋은 페이지가 되었다.
+간단한 프로그램이라고 생각했는데 생각보다 신경써야 되는 부분이 많았다.
+특히 페이지네이션을 위한 데이터를 가져오는 부분은 보완이 필요하다.
+useState를 사용하여 데이터를 넣어줬는데 반복문을 돌다 보니 데이터가 매번 갱신되는 이슈가 있다.
+현재는 페이지 번호를 클릭하면 무한 스크롤과 같이 반응한다.
+github resp-api는 처음 활용해보는데 레퍼런스도 너무 잘 되어있고 옵션도 많아서 더 재미있는 정보를 담은 서비스도 제작해보고 싶다는 생각을 했다.
+```
+
