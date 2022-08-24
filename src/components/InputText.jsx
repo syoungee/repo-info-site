@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import SearchButton from './Button';
+import SearchButton from './SearchButton';
 
 export default function FullWidthTextField() {
   return (
