@@ -17,8 +17,7 @@ const Item = styled(Paper)(({ theme }) => ({
 const lightTheme = createTheme({ palette: { mode: 'light' } });
 
 export default function Views(props) {
-  const { issueList, skeletons } = props;
-  console.log(issueList);
+  const { skeletons, issueList } = props;
 
   return (
     <Grid container spacing={2} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -35,7 +34,7 @@ export default function Views(props) {
                 width: '100%',
               }}
             >
-              {/* {issueList
+              {issueList
                 ? issueList.map((issue, index) => (
                     <Item key={index} elevation={5} style={{ width: '100%' }}>
                       <p style={{ verticalAlign: 'middle', overflow: 'auto' }}>
@@ -43,7 +42,7 @@ export default function Views(props) {
                       </p>
                     </Item>
                   ))
-                : skeletons.map((item, index) => <Skeleton key={index} variant="rectangular" style={{ width: '100%' }} height={118} />)} */}
+                : skeletons.map((item, index) => <Skeleton key={index} variant="rectangular" style={{ width: '100%' }} height={118} />)}
             </Box>
           </ThemeProvider>
         </Grid>

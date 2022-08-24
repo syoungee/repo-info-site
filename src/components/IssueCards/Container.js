@@ -5,7 +5,7 @@ import View from './View';
 
 const Container = (props) => {
   const page = props.page;
-  const skeletons = Array.from({ length: 10 }, (_, i) => i);
+  const skeletons = Array.from({ length: 10 }, (v, i) => i);
   const issueList = [];
 
   const issues = () => {
@@ -16,7 +16,7 @@ const Container = (props) => {
       getIssues(owner, repo_name, 'open', page).then((res) => {
         const data = res.data;
         console.log(res.data);
-        issueList.concat(data);
+        issueList.push(...data);
         return data;
       });
     });
