@@ -15,7 +15,7 @@ export const searchRepos = async (q = '', sort = 'best match', order = 'desc', p
   }
 };
 
-export const getIssues = async (owner, repo, state, page = 1, per_page = 20) => {
+export const getIssues = async (owner, repo, state, page = 1, per_page = 10) => {
   const headers = {
     'Content-Type': 'application/json',
     Accept: 'application/vnd.github.v3+json',

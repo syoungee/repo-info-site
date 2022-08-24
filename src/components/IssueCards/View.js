@@ -17,7 +17,7 @@ const Item = styled(Paper)(({ theme }) => ({
 const lightTheme = createTheme({ palette: { mode: 'light' } });
 
 export default function Views(props) {
-  const { skeletons, issueList } = props;
+  const { skeletons, allIssues } = props;
 
   return (
     <Grid container spacing={2} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -34,9 +34,10 @@ export default function Views(props) {
                 width: '100%',
               }}
             >
-              {issueList
-                ? issueList.map((issue, index) => (
+              {allIssues
+                ? allIssues.map((issue, index) => (
                     <Item key={index} elevation={5} style={{ width: '100%' }}>
+                      <b>{`${issue.repository_url.split('repos/')[1]}`}</b>
                       <p style={{ verticalAlign: 'middle', overflow: 'auto' }}>
                         <b>{`${issue.url}`}</b>
                       </p>
