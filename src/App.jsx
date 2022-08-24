@@ -10,11 +10,11 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route>
-          <Route path="/" element={<Main />} />
           <Route path="/repos" element={<Repos />} />
+          {/* <Route path="/repos" element={<Repos />} /> */}
           <Route path="/issues" element={<Issues />} />
         </Route>
-        <Route path="*" element={<NotFound/>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

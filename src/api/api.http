@@ -3,3 +3,8 @@ https://api.github.com/repos/microsoft/typescript/issues
 
 ###
 https://api.github.com/repos/expressjs/body-parser/issues?state=open&per_page=3
+
+
+### 
+
+https://api.github.com/search/repositories?q=typescript&page=1&per_page=5

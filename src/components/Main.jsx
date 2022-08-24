@@ -1,11 +1,11 @@
 import FullWidthTextField from './InputText';
-import Elevation from './Elevation';
+// import Elevation from './Elevation';
 
 const Main = () => {
   return (
     <div>
-      <FullWidthTextField></FullWidthTextField>
-      <Elevation />
+      <FullWidthTextField />
+      {/* <Elevation /> */}
     </div>
   );
 };
