@@ -1,6 +1,10 @@
 # Payhere 기업 과제
 
 README에 프로젝트 설정 및 실행 방법에 대해서 작성합니다.
+```
+npm install
+npm start
+```
 
 # 과제 소개
 
