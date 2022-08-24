@@ -1,4 +1,12 @@
+import FullWidthTextField from './InputText';
+import Elevation from './Elevation';
+
 const Main = () => {
-  return <div>Main Page</div>;
+  return (
+    <div>
+      <FullWidthTextField></FullWidthTextField>
+      <Elevation />
+    </div>
+  );
 };
 export default Main;
