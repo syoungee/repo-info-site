@@ -10,7 +10,7 @@ const IssuePage = () => {
   };
   return (
     <div>
-      <IssueCards></IssueCards>
+      <IssueCards page={page}></IssueCards>
       <BasicPagination page={page} onChange={handleChange} />
     </div>
   );
