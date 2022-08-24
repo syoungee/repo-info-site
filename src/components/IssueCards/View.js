@@ -38,9 +38,10 @@ export default function Views(props) {
                 ? allIssues.map((issue, index) => (
                     <Item key={index} elevation={5} style={{ width: '100%' }}>
                       <b>{`${issue.repository_url.split('repos/')[1]}`}</b>
-                      <p style={{ verticalAlign: 'middle', overflow: 'auto' }}>
-                        <b>{`${issue.url}`}</b>
-                      </p>
+                      <br />
+                      {`${issue.title}`}
+                      <br />
+                      <a href={`${issue.url}`} style={{ textDecorationColor: 'grey', color: 'grey' }}>{`${issue.url}`}</a>
                     </Item>
                   ))
                 : skeletons.map((item, index) => <Skeleton key={index} variant="rectangular" style={{ width: '100%' }} height={118} />)}
