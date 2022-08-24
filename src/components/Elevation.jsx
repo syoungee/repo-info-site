@@ -29,7 +29,6 @@ export default function Elevation(props) {
   const skeletons = Array.from({ length: 10 }, (v, i) => i);
 
   const repos = () => {
-    // console.log(inputText.inputText);
     searchRepos(searchText).then((res) => {
       const data = res.data.items;
       setRepolist(data);
@@ -40,6 +39,32 @@ export default function Elevation(props) {
   useEffect(() => {
     repos();
   }, [searchText]);
+
+  const addRepo = (item) => {
+    // add 클릭 시 repo name, repo owner 정보를 저장한다.
+    saveRepo(item?.full_name);
+  };
+
+  const saveRepo = (repo_name) => {
+    let repoList = localStorage.getItem('repoList');
+    let repoArr = [];
+    if (!repoList) {
+      repoArr.push(repo_name);
+      localStorage.setItem('repoList', JSON.stringify(repoArr));
+      alert('레포가 추가되었습니다.');
+    } else {
+      repoArr = JSON.parse(repoList);
+      if (repoArr.length >= 4) {
+        repoArr.push(repo_name);
+        localStorage.setItem('repoList', JSON.stringify(repoArr.splice(1)));
+        alert('레포 즐겨찾기 목록이 꽉 찼습니다. 맨 처음 레포를 빼고 레포를 추가합니다.');
+      } else {
+        repoArr.push(repo_name);
+        localStorage.setItem('repoList', JSON.stringify(repoArr));
+        alert('레포가 추가되었습니다.');
+      }
+    }
+  };
 
   return (
     <Grid container spacing={2} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -65,7 +90,7 @@ export default function Elevation(props) {
                       <p style={{ verticalAlign: 'middle', overflow: 'auto' }}>
                         <b>{`${elevation.owner.login}`}</b>
                         <br />
-                        {`${elevation.full_name}`}
+                        <b>{`${elevation.full_name}`}</b>
                         <br />
                         <a href={`${elevation.html_url}`} style={{ textDecorationColor: 'grey', color: 'grey' }}>{`${elevation.html_url}`}</a>
                         <br />
@@ -82,6 +107,7 @@ export default function Elevation(props) {
                             border: '2px solid #008CBA',
                             borderRadius: '6px',
                           }}
+                          onClick={() => addRepo(elevation)}
                         >
                           add
                         </button>
