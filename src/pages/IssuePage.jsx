@@ -7,7 +7,7 @@ const IssuePage = () => {
   const [page, setPage] = useState(1);
 
   return (
-    <div>
+    <div >
       <IssueCards page={page}></IssueCards>
       <BasicPagination page={page} setPage={setPage} />
     </div>

@@ -9,7 +9,7 @@ export default function BasicPagination(props) {
   };
   return (
     <Stack spacing={2}>
-      <Pagination count={10} page={page} onChange={handleChange} color="primary" />
+      <Pagination count={10} page={page} onChange={handleChange} color="primary" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} />
     </Stack>
   );
 }

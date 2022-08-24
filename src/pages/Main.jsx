@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Main = () => {
   const navigate = useNavigate();
@@ -33,12 +34,18 @@ const Main = () => {
 
   return (
     <div>
-      <h1>Main page</h1>
+      <Link to="/">
+        <h1>Main page</h1>
+      </Link>
       <div>
-        <h1>Search Repos</h1>
+        <Link to="/repos">
+          <h1>Search Repos</h1>
+        </Link>
       </div>
       <div>
-        <h1>Get Issues</h1>
+        <Link to="/issues">
+          <h1>Get Issues</h1>
+        </Link>
       </div>
       {repos ? (
         repos.map((repo, index) => {
