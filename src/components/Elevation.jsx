@@ -63,9 +63,28 @@ export default function Elevation(props) {
                 ? repolist.map((elevation, index) => (
                     <Item key={index} elevation={5} style={{ width: '100%' }}>
                       <p style={{ verticalAlign: 'middle', overflow: 'auto' }}>
-                        {`owner ${elevation.owner.login} repo ${elevation.full_name} url ${elevation.html_url} stars ${elevation.stargazers_count} issues ${elevation.open_issues_count}`}
+                        <b>{`${elevation.owner.login}`}</b>
                         <br />
-                        <button>add</button>
+                        {`${elevation.full_name}`}
+                        <br />
+                        <a href={`${elevation.html_url}`} style={{ textDecorationColor: 'grey', color: 'grey' }}>{`${elevation.html_url}`}</a>
+                        <br />
+                        {`⭐️stars: `}
+                        <b>{`${elevation.stargazers_count}`}</b>
+                        <br />
+                        {`🐛issues: `}
+                        <b>{`${elevation.open_issues_count}`}</b>
+                        <br /> <br />
+                        <button
+                          style={{
+                            backgroundColor: '#008CBA',
+                            color: 'white',
+                            border: '2px solid #008CBA',
+                            borderRadius: '6px',
+                          }}
+                        >
+                          add
+                        </button>
                       </p>
                     </Item>
                   ))
